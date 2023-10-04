@@ -313,7 +313,14 @@ class ShowFleetStep3Page extends AbstractGamePage
 
 		if ($targetMission == 5)
 		{	
-			if($targetPlayerData['ally_id'] != $USER['ally_id']) {
+			if($targetPlanetData['ally_deposit'] == 0) {
+				$this->printMessage($LNG['fl_not_ally_deposit'], array(array(
+					'label'	=> $LNG['sys_back'],
+					'url'	=> 'game.php?page=fleetTable'
+				)));	
+			}
+
+			if($targetPlayerData['ally_id'] != $USER['ally_id'] || $targetPlayerData['ally_id'] == 0) {
 				$sql = "SELECT COUNT(*) as state FROM %%BUDDY%%
 				WHERE id NOT IN (SELECT id FROM %%BUDDY_REQUEST%% WHERE %%BUDDY_REQUEST%%.id = %%BUDDY%%.id) AND
 				(owner = :ownerID AND sender = :userID) OR (owner = :userID AND sender = :ownerID);";
@@ -321,8 +328,8 @@ class ShowFleetStep3Page extends AbstractGamePage
                     ':ownerID'  => $targetPlayerData['id'],
                     ':userID'   => $USER['id']
                 ), 'state');
-
-                if($buddy == 0) {
+				
+               if($buddy == 0) {
 					$this->printMessage($LNG['fl_no_same_alliance'], array(array(
 						'label'	=> $LNG['sys_back'],
 						'url'	=> 'game.php?page=fleetTable'
