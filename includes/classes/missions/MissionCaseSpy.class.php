@@ -107,7 +107,7 @@ class MissionCaseSpy extends MissionFunctions implements Mission
 			$classIDs[100]	= $reslist['tech'];
 		}
 		
-		$targetChance 	= mt_rand(0, min(($fleetAmount/4) * ($targetSpyTech / $senderSpyTech), 100));
+		$targetChance 	= mt_rand(0, min(($fleetAmount/4) * floor($targetSpyTech / $senderSpyTech), 100));
 		$spyChance  	= mt_rand(0, 100);
 		$spyData		= array();
 
