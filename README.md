@@ -1,3 +1,11 @@
+## _v2.0.0  Jekill 04.10.2023
+
+[Updates]
+ - Compatibility with PHP 8 or higher.
+ - Update of the Smarty library to version 4.3.4.
+ - Correction of unsupported functions in PHP 8.
+ - Implementation of missing logic in different files of 2Moons.
+
 ## _v2.0.0	Danter14 17.02.2018_
 [Modules] :
 - Percentage with bar and text for real-time resources
