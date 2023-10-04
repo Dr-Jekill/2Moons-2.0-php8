@@ -1,4 +1,4 @@
-## _v2.0.0  Jekill 04.10.2023
+## _v2.0.0  Jekill 04.10.2023_
 
 [Updates]
  - Compatibility with PHP 8 or higher.
