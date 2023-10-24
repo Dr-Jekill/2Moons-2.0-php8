@@ -1,3 +1,32 @@
+body {
+	background:url("../../../theme/gow/img/bkd_page.jpg") no-repeat fixed center center #0d0d0d;
+	min-width: 1000px;
+}
+
+.title {
+	text-align: center;
+	margin: -5px -5px 5px -5px;
+	background: #28292a;
+	padding: 5px;
+	color:#fff;
+}
+
+.text-center {
+    text-align: center
+}
+
+.content_page_install {
+	margin: 0 auto;
+	width: 706px;
+	border: 1px solid #524d4d;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	background: rgba(0, 0, 0, 0.3);
+	padding: 5px;
+	overflow: visible;
+}
+
 table{
 	margin: auto;
 	width:900px;
@@ -15,6 +44,9 @@ body > table{
 }
 .no{
 	color:red;
+}
+.transparent {
+	color: gray;
 }
 
 #menu{

@@ -47,7 +47,7 @@
 <body id="step{if isset($smarty.get.step)}{$smarty.get.step|escape|default:'intro'}{else}intro{/if}">
 <div id="tooltip" class="tip"></div>
 <div><p>&nbsp;</p></div>
-<table width="960">
-<tr>
-	<th colspan="3">{$header}</th>
-</tr>
+<div class="content_page" style="width: 95%;">
+	<div class="title">
+		{$header}
+	</div>
