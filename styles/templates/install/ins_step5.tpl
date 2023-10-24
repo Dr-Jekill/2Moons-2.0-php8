@@ -1,7 +1,7 @@
 {include file="ins_header.tpl"}
 <tr>
 	<td colspan="2">
-		<div id="main" class="left">
+		<div id="main" class="transparent text-center">
 			<h2>{$LNG.step3_head}</h2>
 			<p>{$LNG.step3_desc}</p>
 			<div style="text-align:center;"><p>
