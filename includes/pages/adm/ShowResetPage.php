@@ -152,7 +152,6 @@ function ShowResetPage()
 		'button_submit'						=> $LNG['button_submit'],
 		're_reset_universe_confirmation'	=> $LNG['re_reset_universe_confirmation'],
 		're_reset_all'						=> $LNG['re_reset_all'],
-		're_reset_all'						=> $LNG['re_reset_all'],
 		're_defenses_and_ships'				=> $LNG['re_defenses_and_ships'],
 		're_reset_buldings'					=> $LNG['re_reset_buldings'],
 		're_buildings_lu'					=> $LNG['re_buildings_lu'],

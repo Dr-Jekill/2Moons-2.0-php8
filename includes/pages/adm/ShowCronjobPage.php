@@ -150,6 +150,8 @@ function ShowCronjobEnable($cronjobId) {
 
 function ShowCronjobOverview() 
 {
+	global $LNG;
+	
 	$data    = $GLOBALS['DATABASE']->query("SELECT * FROM ".CRONJOBS.";");
 
 	$template	= new template();	

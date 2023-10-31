@@ -33,6 +33,9 @@ class ResourceUpdate
 	private $USER			= array();
 	private $Builded		= array();
 
+	private $Build;
+	private $Tech;
+
 	function __construct($Build = true, $Tech = true)
 	{
 		$this->Build	= $Build;

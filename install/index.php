@@ -204,7 +204,7 @@ switch ($mode) {
                     $ch = curl_init($httpRoot . $fileInfo['fileName']);
                     curl_setopt($ch, CURLOPT_HEADER, false);
                     curl_setopt($ch, CURLOPT_NOBODY, true);
-                    curl_setopt($ch, CURLOPT_MUTE, true);
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                     curl_exec($ch);
                     if (curl_errno($ch)) {
                         $errorMessage = 'CURL-Error on update ' . basename($fileInfo['filePath']) . ':' . curl_error($ch);

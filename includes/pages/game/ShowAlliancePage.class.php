@@ -1389,7 +1389,7 @@ class ShowAlliancePage extends AbstractGamePage
     {
         global $LNG;
         if (!$this->rights['MANAGEUSERS']) {
-            $this->sendJSON();
+            $this->sendJSON([]);
         }
 
 		$userRanks	= HTTP::_GP('rank', array());

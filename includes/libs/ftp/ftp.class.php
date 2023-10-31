@@ -11,7 +11,6 @@
  * @version    1.0 released 01.09.2008
  */
 
-
 class FTP
 {
    /**

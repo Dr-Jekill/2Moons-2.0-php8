@@ -67,5 +67,6 @@
 	});
 	</script>
 </head>
-<body id="{$smarty.get.page|escape|default:'overview'}" class="{$bodyclass}">
+{$smarty.get}
+<body id="{$smarty.get.page|default:'overview'|escape}" class="{$bodyclass}">
 	<div id="tooltip" class="tip"></div>

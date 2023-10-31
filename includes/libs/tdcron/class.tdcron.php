@@ -175,7 +175,7 @@
 					// a little odd but thats the easiest way of adding/substracting a day without
 					// screwing up the date. Just trust me on that one ;-)
 
-					$rtime			= explode(',', strftime('%M,%H,%d,%m,%w,%Y', mktime($rtime[IDX_HOUR], $rtime[IDX_MINUTE], 0, $rtime[IDX_MONTH], $rtime[IDX_DAY], $rtime[IDX_YEAR]) + ((($next) ? 1 : -1) * 86400)));
+					$rtime			= explode(',', date('i,H,d,m,w,Y', mktime($rtime[IDX_HOUR], $rtime[IDX_MINUTE], 0, $rtime[IDX_MONTH], $rtime[IDX_DAY], $rtime[IDX_YEAR]) + ((($next) ? 1 : -1) * 86400)));
 
 				} else {
 
@@ -195,8 +195,16 @@
 
 							$nminute	= reset($cron[IDX_MINUTE]);
 							$nhour		= reset($cron[IDX_HOUR]);
-
-							$rtime		= explode(',', strftime('%M,%H,%d,%m,%w,%Y', mktime($nhour, $nminute, 0, $rtime[IDX_MONTH], $rtime[IDX_DAY], $rtime[IDX_YEAR]) + ((($next) ? 1 : -1) * 86400)));
+							/*
+							%M Minutos 00-59 (i)
+							%H Hours   00-23 (H)
+							%d day     01-31 (d)
+							%m month   01-12 (m)
+							%w week    0 - 6 (w)
+							%Y Year  0000-9999 (Y)
+							
+							*/
+							$rtime		= explode(',', date('i,H,d,m,w,Y', mktime($nhour, $nminute, 0, $rtime[IDX_MONTH], $rtime[IDX_DAY], $rtime[IDX_YEAR]) + ((($next) ? 1 : -1) * 86400)));
 
 						} else {
 
@@ -276,7 +284,7 @@
 
 											// WIN! :-) We found a valid date...
 
-											$rtime			= explode(',', strftime('%M,%H,%d,%m,%w,%Y', mktime($rtime[IDX_HOUR], $rtime[IDX_MINUTE], 0, $nmonth, $nday, $nyear)));
+											$rtime			= explode(',', date('i,H,d,m,w,Y', mktime($rtime[IDX_HOUR], $rtime[IDX_MINUTE], 0, $nmonth, $nday, $nyear)));
 
 											return mktime($rtime[1], $rtime[0], 0, $rtime[3], $rtime[2], $rtime[5]);
 
@@ -322,9 +330,9 @@
 		static private function getTimestamp($timestamp = null) {
 
 			if (is_null($timestamp)) {
-				$arr	= explode(',', strftime('%M,%H,%d,%m,%w,%Y', time()));
+				$arr	= explode(',', date('i,H,d,m,w,Y', time()));
 			} else {
-				$arr	= explode(',', strftime('%M,%H,%d,%m,%w,%Y', $timestamp));
+				$arr	= explode(',', date('i,H,d,m,w,Y', $timestamp));
 			}
 
 			// Remove leading zeros (or we'll get in trouble ;-)

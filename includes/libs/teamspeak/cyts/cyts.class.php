@@ -35,6 +35,7 @@
 define("CYTS_VERSION", "2.4.1");
 define("CYTS_BUILD", "DELTA");
 
+#[\AllowDynamicProperties]
 /**
  * @package CYTS-DELTA
  */
@@ -51,6 +52,18 @@ class cyts {
   * @param		integer $sTimeout Socket timeout in seconds
   * @return     boolean status
   */
+
+
+	private $sCon;
+	private $server;
+	private $tcp;
+	private $udp;
+	private $debug = array();
+	private $isAdmin;
+	private $isSAdmin;
+	private $user;
+	private $pass;
+
 	function connect($sIP, $sTCP, $sUDP = false, $sTimeout = 3) {
 		$this->__construct();
 		if (!$this->sCon = @fsockopen($sIP, $sTCP, $errNo, $errStr, $sTimeout)) {

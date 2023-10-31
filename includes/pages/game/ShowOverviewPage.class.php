@@ -271,7 +271,7 @@ class ShowOverviewPage extends AbstractGamePage
 			':timeUser' => TIMESTAMP - 15*60,
 			':auth' => AUTH_ADM,
 		));
-		$onlineUser = $db->rowCount($onlineUserResult);
+		$onlineUser = $db->rowCount();
 		
 		$this->assign(array(
 			'rankInfo'					=> $rankInfo,

@@ -38,10 +38,10 @@ class AJAXChatEncoding {
 			return iconv($charsetFrom, $charsetTo, $str);
 		}
 		if(($charsetFrom == 'UTF-8') && ($charsetTo == 'ISO-8859-1')) {
-			return utf8_decode($str);
+			return mb_convert_encoding($str, 'ISO-8859-1', 'UTF-8');
 		}
 		if(($charsetFrom == 'ISO-8859-1') && ($charsetTo == 'UTF-8')) {
-			return utf8_encode($str);
+			return mb_convert_encoding($str, 'UTF-8', 'ISO-8859-1');
 		}
 		return $str;
 	}

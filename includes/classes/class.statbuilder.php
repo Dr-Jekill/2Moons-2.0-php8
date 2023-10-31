@@ -17,6 +17,13 @@
 
 class statbuilder
 {
+	private $starttime;
+	private $memory;
+	private $time;
+	private $recordData;
+	private $Unis;
+
+
 	function __construct()
 	{
 		$this->starttime   	= microtime(true);

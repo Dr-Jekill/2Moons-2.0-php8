@@ -22,12 +22,12 @@ class AJAXChatDataBaseMySQL {
 	
 	// Method to connect to the DataBase server:
 	function connect(&$dbConnectionConfig) {
-		$this->_connectionID = @mysql_connect(
+		$this->_connectionID = new mysqli(
 			$dbConnectionConfig['host'],
 			$dbConnectionConfig['user'],
-			$dbConnectionConfig['pass'],
-			true
+			$dbConnectionConfig['pass']
 		);
+		
 		if(!$this->_connectionID) {
 			$this->_errno = null;
 			$this->_error = 'Database connection failed.';
@@ -38,9 +38,9 @@ class AJAXChatDataBaseMySQL {
 	
 	// Method to select the DataBase:
 	function select($dbName) {
-		if(!@mysql_select_db($dbName, $this->_connectionID)) {
-			$this->_errno = mysql_errno($this->_connectionID);
-			$this->_error = mysql_error($this->_connectionID);
+		if(!$this->_connectionID->select_db($dbName)){
+			$this->_errno = $this->_connectionID->connect_errno;
+			$this->_error = $this->_connectionID->connect_error;
 			return false;
 		}
 		$this->_dbName = $dbName;
@@ -70,7 +70,7 @@ class AJAXChatDataBaseMySQL {
 	
 	// Method to prevent SQL injections:
 	function makeSafe($value) {
-		return "'".mysql_real_escape_string($value, $this->_connectionID)."'";
+		return "'".$this->_connectionID->real_escape_string($value)."'";
 	}
 	
 	// Method to perform SQL queries:
@@ -85,7 +85,7 @@ class AJAXChatDataBaseMySQL {
 
 	// Method to retrieve the last inserted ID:
 	function getLastInsertedID() {
-		return mysql_insert_id($this->_connectionID);
+		return $this->_connectionID->insert_id;
 	}
 
 }

@@ -20,18 +20,10 @@ class AJAXChatMySQLQuery {
 	function __construct($sql, $connectionID = null) {
 		$this->_sql = trim($sql);
 		$this->_connectionID = $connectionID;
-		if($this->_connectionID) {
-			$this->_result = mysql_query($this->_sql, $this->_connectionID);
-			if(!$this->_result) {
-				$this->_errno = mysql_errno($this->_connectionID);
-				$this->_error = mysql_error($this->_connectionID);
-			}
-		} else {
-			$this->_result = mysql_query($this->_sql);
-			if(!$this->_result) {
-				$this->_errno = mysql_errno();
-				$this->_error = mysql_error();
-			}	
+		$this->_result = $this->_connectionID->query($this->_sql);
+		if(!$this->_result) {
+			$this->_errno = $this->_connectionID->errno;
+			$this->_error = $this->_connectionID->error;
 		}
 	}
 
@@ -58,7 +50,7 @@ class AJAXChatMySQLQuery {
 		if($this->error()) {
 			return null;
 		} else {
-			return mysql_fetch_assoc($this->_result);
+			return $this->_result->fetch_assoc();
 		}
 	}
 
@@ -67,7 +59,7 @@ class AJAXChatMySQLQuery {
 		if($this->error()) {
 			return null;
 		} else {
-			return mysql_num_rows($this->_result);
+			return $this->_result->num_rows;
 		}
 	}
 
@@ -76,13 +68,13 @@ class AJAXChatMySQLQuery {
 		if($this->error()) {
 			return null;
 		} else {
-			return mysql_affected_rows($this->_connectionID);
+			return $this->_connectionID->affected_rows;
 		}
 	}
 
 	// Frees the memory:
 	function free() {
-		@mysql_free_result($this->_result);
+		$this->_result->free();
 	}
 	
 }

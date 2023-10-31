@@ -131,7 +131,7 @@ class ShowSettingsPage extends AbstractGamePage
 	
 	private function sendVacation() 
 	{
-		global $USER, $LNG; $PLANET;
+		global $USER, $LNG, $PLANET;
 		
 		$delete		= HTTP::_GP('delete', 0);
 		$vacation	= HTTP::_GP('vacation', 0);

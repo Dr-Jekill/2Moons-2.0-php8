@@ -208,7 +208,7 @@ class ShowResearchPage extends AbstractGamePage
 
 		if(!in_array($elementId, $reslist['tech'])
 			|| !BuildFunctions::isTechnologieAccessible($USER, $PLANET, $elementId)
-			|| !$this->CheckLabSettingsInQueue($PLANET)
+			|| !$this->CheckLabSettingsInQueue()
 		)
 		{
 			return false;
@@ -355,7 +355,7 @@ class ShowResearchPage extends AbstractGamePage
 			$this->redirectTo('game.php?page=research');
 		}
 		
-		$bContinue		= $this->CheckLabSettingsInQueue($PLANET);
+		$bContinue		= $this->CheckLabSettingsInQueue();
 		
 		$queueData		= $this->getQueueData();
 		$TechQueue		= $queueData['queue'];

@@ -28,6 +28,8 @@ function ShowAccountDataPage()
 	{
 		$OnlyQueryLogin 	= $GLOBALS['DATABASE']->getFirstRow("SELECT `id`, `authlevel` FROM ".USERS." WHERE `id` = '".$id_u."' AND `universe` = '".Universe::getEmulated()."';");
 
+		$SpecifyItemsUQ = '';
+
 		if(!isset($OnlyQueryLogin))
 		{
 			$template->message($LNG['ac_username_doesnt'], '?page=accoutdata');
@@ -383,9 +385,9 @@ function ShowAccountDataPage()
 				'tag'							=> $tag,
 				'ali_nom'						=> $ali_nom,
 				'ali_ext'						=> $ali_ext,
-				'ali_ext'						=> $ali_ext2,
+				'ali_ext2'						=> $ali_ext2,
 				'ali_int'						=> $ali_int,
-				'ali_int'						=> $ali_int2,
+				'ali_int2'						=> $ali_int2,
 				'ali_sol2'						=> $ali_sol2,
 				'ali_sol'						=> $ali_sol,
 				'ali_logo'						=> $ali_logo,
@@ -394,7 +396,6 @@ function ShowAccountDataPage()
 				'ally_register_time'			=> $ally_register_time,
 				'ali_cant'						=> $ali_cant,
 				'alianza'						=> $alianza,
-				'input_id'						=> $input_id,
 				'id'							=> $id,
 				'nombre'						=> $nombre,
 				'nivel'							=> $nivel,

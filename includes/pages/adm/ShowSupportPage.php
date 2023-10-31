@@ -20,6 +20,7 @@ if (!allowedTo(str_replace(array(dirname(__FILE__), '\\', '/', '.php'), '', __FI
 class ShowSupportPage
 {
 	private $ticketObj;
+	public $tplObj;
 	
 	function __construct() 
 	{

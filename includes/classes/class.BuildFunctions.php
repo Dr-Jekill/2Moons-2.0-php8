@@ -181,7 +181,7 @@ class BuildFunctions
 
     public static function isElementBuyable($USER, $PLANET, $Element, $elementPrice = NULL, $forDestroy = false, $forLevel = NULL)
     {
-        $rest	= self::getRestPrice($USER, $PLANET, $Element, $elementPrice, $forDestroy, $forLevel);
+        $rest	= self::getRestPrice($USER, $PLANET, $Element, $elementPrice);
         return count(array_filter($rest)) === 0;
     }
 
