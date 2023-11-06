@@ -1,3 +1,36 @@
+body {
+	background:url("../../../theme/gow/img/bkd_page.jpg") no-repeat fixed center center #0d0d0d;
+	min-width: 1000px;
+}
+
+.title {
+	text-align: center;
+	margin: -5px -5px 5px -5px;
+	background: #28292a;
+	padding: 5px;
+	color:#fff;
+}
+
+.text-center {
+    text-align: center
+}
+
+.content_page_install {
+	margin: 0 auto;
+	width: 706px;
+	border: 1px solid #524d4d;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	background: rgba(0, 0, 0, 0.3);
+	padding: 5px;
+	overflow: visible;
+}
+
+.transparent {
+	color: #6c6c6c;
+}
+
 table{
 	margin: auto;
 	width:900px;
@@ -7,8 +40,9 @@ body > table{
 	width:960px;
 }
 
-.yes{
-	color:lime;
+.yes {
+    color: #05ab05;
+    text-shadow: 0px 1px black;
 }
 .ok{
 	color:yellow;
@@ -101,4 +135,12 @@ span > a{
 	border: 1px solid #009900;
 	color: #009900;
 	padding:7px 10px 7px 45px
+}
+
+.installcontent {
+    background: #fff9;
+    backdrop-filter: blur(2px);
+    padding: 12px;
+    box-shadow: 6px 7px 18px -5px #000;
+    border-radius: 3px;
 }

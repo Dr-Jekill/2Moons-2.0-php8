@@ -1,11 +1,13 @@
 {include file="ins_header.tpl"}
 <tr>
 	<td colspan="2">
-		<div id="lang" align="right">{$LNG.intro_lang}:&nbsp;<select id="lang" name="lang" onchange="document.location = '?lang='+$(this).val();">{html_options options=$Selector selected=$lang}</select></div>
-		<div id="main" align="left">
-			<h2>{$LNG.intro_welcome}</h2>
-			<p>{$LNG.intro_text}</p>
-		</div><br><a href="index.php?mode=install&amp;step=2"><button style="cursor: pointer;">{$LNG.continue}</button></a>
+		<div class="installcontent">
+			<div id="lang" align="right">{$LNG.intro_lang}:&nbsp;<select id="lang" name="lang" onchange="document.location = '?lang='+$(this).val();">{html_options options=$Selector selected=$lang}</select></div>
+			<div id="main" align="left">
+				<h2>{$LNG.intro_welcome}</h2>
+				<p>{$LNG.intro_text}</p>
+			</div><br><a href="index.php?mode=install&amp;step=2"><button style="cursor: pointer;">{$LNG.continue}</button></a>
+		</div>
 	</td>
 </tr>
 {if $canUpgrade}
@@ -14,10 +16,12 @@
 </tr>
 <tr>
 	<td colspan="2">
-		<div id="main" align="left">
-			<h2>{$LNG.intro_upgrade_head}</h2>
-			<p>{$LNG.intro_upgrade_text}</p>
-		</div><br><a href="index.php?mode=upgrade"><button style="cursor: pointer;">{$LNG.continueUpgrade}</button></a>
+		<div class="installcontent">
+			<div id="main" align="left">
+				<h2>{$LNG.intro_upgrade_head}</h2>
+				<p>{$LNG.intro_upgrade_text}</p>
+			</div><br><a href="index.php?mode=upgrade"><button style="cursor: pointer;">{$LNG.continueUpgrade}</button></a>
+		</div>
 	</td>
 </tr>
 {/if}
