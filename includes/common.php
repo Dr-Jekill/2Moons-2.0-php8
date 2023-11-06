@@ -54,10 +54,8 @@ require 'includes/classes/Database.class.php';
 require 'includes/classes/Config.class.php';
 require 'includes/classes/class.FleetFunctions.php';
 require 'includes/classes/HTTP.class.php';
-if(PHP_VERSION < 8)
-	require 'includes/classes/Language.class.php';
-else
-	require 'includes/classes/Languagev8.class.php';
+
+require 'includes/classes/Language.class.php';
 
 require 'includes/classes/PlayerUtil.class.php';
 require 'includes/classes/Session.class.php';
