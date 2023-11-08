@@ -128,6 +128,8 @@ function ShowLogDetail() {
 		'username'		=> $LNG['adm_username'],
 		'field_max'		=> $LNG['qe_fields'],
 	);
+
+	$LogArray = [];
 	
 	foreach ($conf_before as $key => $val) {
 		if ($key != 'universe') {
@@ -186,6 +188,8 @@ function ShowLogSettingsList() {
 		4 => $LNG['log_tssettings'],
 		5 => $LNG['log_disclamersettings']
 	);
+
+	$LogArray = [];
 	
 	while ($LogRow = $GLOBALS['DATABASE']->fetch_array($result))
 	{			
@@ -219,6 +223,8 @@ function ShowLogPlanetsList() {
 	$template	= new template();	
 	if(!$result)
 		$template->message($LNG['log_no_data']);
+
+	$LogArray = [];
 		
 	while ($LogRow = $GLOBALS['DATABASE']->fetch_array($result))
 	{			

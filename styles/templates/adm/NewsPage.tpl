@@ -1,7 +1,7 @@
 {include file="overall_header.tpl"}
 {nocache}{if isset($mode)}
 <form method="POST" action="?page=news&amp;action=send&amp;mode={$mode}">
-{if $news_id}<input name="id" type="hidden" value="{$news_id}">{/if}
+{if isset($news_id)}<input name="id" type="hidden" value="{$news_id}">{/if}
 <table>
 <tr>
 	<th colspan="2">{$nws_head}</th>

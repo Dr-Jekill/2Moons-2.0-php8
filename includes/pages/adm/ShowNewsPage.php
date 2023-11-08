@@ -64,6 +64,8 @@ function ShowNewsPage(){
 		$template->assign_vars(array(	
 			'mode'			=> 2,
 			'nws_head'		=> $LNG['nws_head_create'],
+			'news_title'	=> '',
+			'news_text'		=> ''
 		));
 	}
 	

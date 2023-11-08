@@ -20,27 +20,27 @@
 <tr>
 	<td>{$LNG.cronjob_min}</td>
 	<td colspan=2><select style="height:100px;width:80px;" name="min[]" multiple="multiple">{html_options values=range(0, 59) output=range(0, 59) selected=$min}</select><br>
-	<input name="min_all" id="min_all" type="checkbox" value="1" {if $min.0==="*"}checked{/if}><label for="min_all">{$LNG.cronjob_selectall}</label></td>
+	<input name="min_all" id="min_all" type="checkbox" value="1" {if isset($min.0) && $min.0==="*"}checked{/if}><label for="min_all">{$LNG.cronjob_selectall}</label></td>
 </tr>
 <tr>
 	<td>{$LNG.cronjob_hours}</td>
 	<td colspan=2><select style="height:100px;width:80px;" name="hours[]" multiple="multiple">{html_options values=range(0, 23) output=range(0, 23) selected=$hours}</select><br>
-	<input name="hours_all" id="hours_all" type="checkbox" value="1" {if $hours.0==="*"}checked{/if}><label for="hours_all">{$LNG.cronjob_selectall}</label></td>
+	<input name="hours_all" id="hours_all" type="checkbox" value="1" {if isset($hours.0) && $hours.0==="*"}checked{/if}><label for="hours_all">{$LNG.cronjob_selectall}</label></td>
 </tr>
 <tr>
 	<td>{$LNG.cronjob_dom}</td>
 	<td colspan=2><select style="height:100px;width:80px;" name="dom[]" multiple="multiple">{html_options values=range(1, 31) output=range(1, 31) selected=$dom}</select><br>
-	<input name="dom_all" id="dom_all" type="checkbox" value="1" {if $dom.0==="*"}checked{/if}><label for="dom_all">{$LNG.cronjob_selectall}</label></td>
+	<input name="dom_all" id="dom_all" type="checkbox" value="1" {if isset($dom.0) && $dom.0==="*"}checked{/if}><label for="dom_all">{$LNG.cronjob_selectall}</label></td>
 </tr>
 <tr>
 	<td>{$LNG.cronjob_month}</td>
 	<td colspan=2><select style="height:100px;width:80px;" name="month[]" multiple="multiple">{html_options values=range(1, 12) output=$LNG.months selected=$month}</select><br>
-	<input name="month_all" id="month_all" type="checkbox" value="1" {if $month.0==="*"}checked{/if}><label for="month_all">{$LNG.cronjob_selectall}</label></td>
+	<input name="month_all" id="month_all" type="checkbox" value="1" {if isset($month.0) && $month.0==="*"}checked{/if}><label for="month_all">{$LNG.cronjob_selectall}</label></td>
 </tr>
 <tr>
 	<td>{$LNG.cronjob_dow}</td>
 	<td colspan=2><select style="height:100px;width:80px;" name="dow[]" multiple="multiple">{html_options values=range(0, 6) output=$LNG.week_day selected=$dow}</select><br>
-	<input name="dow_all" id="dow_all" type="checkbox" value="1" {if $dow.0==="*"}checked{/if}><label for="dow_all">{$LNG.cronjob_selectall}</label></td>
+	<input name="dow_all" id="dow_all" type="checkbox" value="1" {if isset($dow.0) && $dow.0==="*"}checked{/if}><label for="dow_all">{$LNG.cronjob_selectall}</label></td>
 </tr>
 <tr>
 	<td>{$LNG.cronjob_class}</td>
