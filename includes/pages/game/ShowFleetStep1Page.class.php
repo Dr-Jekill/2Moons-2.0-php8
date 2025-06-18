@@ -262,27 +262,32 @@ class ShowFleetStep1Page extends AbstractGamePage
                 ':targetType' => (($targetPlanetType == 2) ? 1 : $targetPlanetType),
             ));
 
-            if ($targetPlanetType == 3 && !isset($planetData))
+            if ($targetPlanetType == 3 && empty($planetData))
 			{
 				$this->sendJSON($LNG['fl_error_no_moon']);
 			}
 
-			if ($targetPlanetType != 2 && $planetData['urlaubs_modus'])
+            if ($targetPlanetType == 1 && empty($planetData))
+			{
+				$this->sendJSON($LNG['OK']);
+			}
+
+			if ($targetPlanetType != 2 && !empty($planetData) && $planetData['urlaubs_modus'])
 			{
 				$this->sendJSON($LNG['fl_in_vacation_player']);
 			}
 
-			if ($planetData['id'] != $USER['id'] && Config::get()->adm_attack == 1 && $planetData['authattack'] > $USER['authlevel'])
+			if ($planetData['id'] != $USER['id'] && Config::get()->adm_attack == 1 && !empty($planetData) && $planetData['authattack'] > $USER['authlevel'])
 			{
 				$this->sendJSON($LNG['fl_admin_attack']);
 			}
 
-			if ($planetData['destruyed'] != 0)
+			if (!empty($planetData) && $planetData['destruyed'] != 0)
 			{
 				$this->sendJSON($LNG['fl_error_not_avalible']);
 			}
 
-			if($targetPlanetType == 2 && $planetData['der_metal'] == 0 && $planetData['der_crystal'] == 0)
+			if($targetPlanetType == 2 && !empty($planetData) && $planetData['der_metal'] == 0 && $planetData['der_crystal'] == 0)
 			{
 				$this->sendJSON($LNG['fl_error_empty_derbis']);
 			}
